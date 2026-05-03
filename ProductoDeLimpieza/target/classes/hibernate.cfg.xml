@@ -1,23 +1,26 @@
 <hibernate-configuration>
  <session-factory>
 
+  <!-- CONEXIÓN -->
   <property name="hibernate.connection.driver_class">org.h2.Driver</property>
   <property name="hibernate.connection.url">jdbc:h2:mem:testdb</property>
   <property name="hibernate.connection.username">sa</property>
   <property name="hibernate.connection.password"></property>
-  
 
+  <!-- DIALECTO -->
   <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
 
+  <!-- CONFIGURACIÓN BD -->
   <property name="hibernate.hbm2ddl.auto">update</property>
 
-  <property name="hibernate.show_sql">false</property>
+  <!-- SQL -->
+  <property name="hibernate.show_sql">true</property>
   <property name="hibernate.format_sql">true</property>
-  
+
+  <!-- CONTEXTO DE SESIÓN -->
   <property name="hibernate.current_session_context_class">thread</property>
 
-  <mapping class="modelo.Producto"/>
-  <mapping class="modelo.Cliente"/>
+
 
  </session-factory>
-</hibernate-configuration> 
+</hibernate-configuration>

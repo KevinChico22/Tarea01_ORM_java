@@ -12,6 +12,13 @@ public class Producto {
 
     private String nombre;
     private double precio;
+    
+    ///Relacion de muchos a uno
+    @ManyToOne
+    @JoinColumn(name = "marca_id")
+    private Marca marca;
+
+    
 
     public Producto() {}
 
@@ -33,5 +40,12 @@ public class Producto {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
     }
 }
